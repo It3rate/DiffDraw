@@ -30,9 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btNext = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbIndex = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btPrevious = new System.Windows.Forms.Button();
+            this.lbRecognized = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,12 +56,12 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(348, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbIndex.Location = new System.Drawing.Point(348, 45);
+            this.lbIndex.Name = "label1";
+            this.lbIndex.Size = new System.Drawing.Size(100, 20);
+            this.lbIndex.TabIndex = 2;
+            this.lbIndex.Text = "0";
+            this.lbIndex.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // comboBox1
             // 
@@ -81,13 +82,23 @@
             this.btPrevious.UseVisualStyleBackColor = true;
             this.btPrevious.Click += new System.EventHandler(this.btPrevious_Click);
             // 
+            // label2
+            // 
+            this.lbRecognized.Location = new System.Drawing.Point(176, 476);
+            this.lbRecognized.Name = "label2";
+            this.lbRecognized.Size = new System.Drawing.Size(146, 26);
+            this.lbRecognized.TabIndex = 4;
+            this.lbRecognized.Text = "_ Recognized";
+            this.lbRecognized.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 554);
+            this.Controls.Add(this.lbRecognized);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbIndex);
             this.Controls.Add(this.btPrevious);
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.panel1);
@@ -101,9 +112,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btNext;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbIndex;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btPrevious;
+        private System.Windows.Forms.Label lbRecognized;
     }
 }
 

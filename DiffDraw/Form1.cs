@@ -27,6 +27,7 @@ namespace DiffDraw
         {
             comboBox1.SelectedIndex = (int)category;
             _quickDraw.LoadCategory(category);
+            Update();
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -37,19 +38,34 @@ namespace DiffDraw
 
         private void btNext_Click(object sender, EventArgs e)
         {
-            label1.Text = _quickDraw.Next().ToString();
-            panel1.Invalidate();
+            _quickDraw.Next();
+            Update();
         }
         private void btPrevious_Click(object sender, EventArgs e)
         {
-            label1.Text = _quickDraw.Previous().ToString();
+            _quickDraw.Previous();
+            Update();
+        }
+        public void Update()
+        {
+            lbIndex.Text = _quickDraw.CurrentIndex.ToString();
+            if (_quickDraw.IsCurrentRecognized())
+            {
+                lbRecognized.Text = "✓ Recognized";
+                lbRecognized.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbRecognized.Text = "X Unrecognized";
+                lbRecognized.ForeColor = Color.Red;
+            }
             panel1.Invalidate();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadCategory((QuickDrawCategory)comboBox1.SelectedIndex);
-            _quickDraw.Next();
+            Update();
             panel1.Invalidate();
         }
 
